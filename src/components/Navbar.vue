@@ -49,12 +49,6 @@
       <nav class="flex flex-col gap-2 text-sm">
         <router-link to="/" @click="isOpen = false" class="hover:underline">Home</router-link>
         <router-link to="/books" @click="isOpen = false" class="hover:underline">Books</router-link>
-        <router-link to="/clothing" @click="isOpen = false" class="hover:underline">Clothing</router-link>
-        <router-link to="/recordings" @click="isOpen = false" class="hover:underline">Recordings</router-link>
-        <router-link to="/swag" @click="isOpen = false" class="hover:underline">Swag</router-link>
-        <router-link to="/pos" @click="isOpen = false" class="hover:underline">Point of Sale</router-link>
-        <router-link to="/admin" @click="isOpen = false" class="hover:underline">Admin</router-link>
-        <router-link to="/cart" @click="isOpen = false" class="hover:underline">Cart</router-link>
       </nav>
     </div>
   </header>
