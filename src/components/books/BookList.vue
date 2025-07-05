@@ -2,7 +2,14 @@
   <div class="max-w-7xl mx-auto px-4">
     <h1 class="text-2xl font-bold mb-6 text-blue-900">📚 Available Books</h1>
 
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+    <!-- Loading Spinner -->
+    <div v-if="loading" class="flex justify-center items-center py-20">
+      <div class="animate-spin rounded-full h-12 w-12 border-t-4 border-blue-600 border-opacity-50"></div>
+      <span class="ml-4 text-gray-600 text-sm">Loading books...</span>
+    </div>
+
+    <!-- Books Grid -->
+    <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
       <div
         v-for="book in books"
         :key="book.id"
@@ -27,13 +34,20 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted } from 'vue';
-import { fetchBooks } from '@/api/bookService';
-import { Book } from '@/models/Book';
+import { ref, onMounted } from 'vue'
+import { fetchBooks } from '@/api/bookService'
+import { Book } from '@/models/Book'
 
-const books = ref<Book[]>([]);
+const books = ref<Book[]>([])
+const loading = ref(true)
 
 onMounted(async () => {
-  books.value = await fetchBooks();
-});
+  try {
+    books.value = await fetchBooks()
+  } catch (error) {
+    console.error('Failed to load books:', error)
+  } finally {
+    loading.value = false
+  }
+})
 </script>
