@@ -3,7 +3,8 @@ import axios from 'axios';
 import { Book } from '@/models/Book';
 import { BookSerializer } from '@/serializers/BookSerializer';
 
-const BASE_URL = 'http://localhost:8000'; // Replace with actual API URL
+const BASE_URL = import.meta.env.VITE_API_URL; // Replace with actual API URL
+console.log(BASE_URL)
 
 export async function fetchBooks(): Promise<Book[]> {
   const response = await axios.get(`${BASE_URL}/books`);
