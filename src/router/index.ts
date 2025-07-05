@@ -2,16 +2,17 @@ import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import BookList from '@/components/books/BookList.vue'
 import BookDetail from '@/components/books/BookDetail.vue'
+import Landing from '@/components/Landing.vue'
 
 
 const router = createRouter({
   history: createWebHistory(),
   routes: [
-    // {
-    //   path: '/',
-    //   name: 'home',
-    //   component: HomeView,
-    // },
+    {
+      path: '/',
+      name: 'home',
+      component: Landing,
+    },
     // {
     //   path: '/about',
     //   name: 'about',

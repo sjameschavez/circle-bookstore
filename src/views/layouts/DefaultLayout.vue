@@ -9,8 +9,8 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-200 py-4 text-center text-sm text-gray-600">
-      © 2025 Bookstore. All rights reserved.
+    <footer class="text-center text-gray-500 text-sm py-6">
+      © 2025 Circle Bookstore · Demo Project by Stephen
     </footer>
   </div>
 </template>
