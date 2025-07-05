@@ -1,39 +1,71 @@
-# vue-bookstore
+# 📚 vue-bookstore
 
-This template should help get you started developing with Vue 3 in Vite.
+A simple Vue 3 + TypeScript bookstore landing page built with Vite. It fetches book data from a local or remote API, displays a catalog, and allows users to view book details and purchase them.
 
-## Recommended IDE Setup
+---
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## 🚀 Features
 
-## Type Support for `.vue` Imports in TS
+- 📘 Book list and individual detail pages
+- 🧠 Type-safe models using OOP and serialization
+- 🛒 Purchase flow with stock updates
+- 🌈 TailwindCSS 3 for styling
+- 🔔 Toast notifications for UX feedback
+- 🧪 Unit tests with Vitest
+- ⚡ Built with Vite for fast development
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
+---
 
-## Customize configuration
+## 🧩 Dependencies Used
 
-See [Vite Configuration Reference](https://vite.dev/config/).
+| Package                  | Purpose                                  |
+|--------------------------|------------------------------------------|
+| `vue`                    | Vue 3 framework                         |
+| `vue-router`             | Routing/navigation                      |
+| `pinia` *(optional)*     | State management (not used by default) |
+| `axios`                  | HTTP client for API requests            |
+| `vue3-toastify`          | Toast notification library              |
+| `tailwindcss`            | Utility-first CSS framework             |
+| `postcss`, `autoprefixer`| For Tailwind/PostCSS pipeline           |
+| `@vitejs/plugin-vue`     | Vue plugin for Vite                     |
+| `vitest`, `@vue/test-utils` | Unit testing                         |
+| `vue-tsc`                | TypeScript support for `.vue` files     |
 
-## Project Setup
+---
 
-```sh
+## 🛠 Recommended IDE Setup
+
+- [VSCode](https://code.visualstudio.com/)
+- [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (disable Vetur)
+
+---
+
+## 📦 Project Setup
+
+```bash
 npm install
-```
 
-### Compile and Hot-Reload for Development
+## 🔧 Development
 
-```sh
+```bash
 npm run dev
-```
 
-### Type-Check, Compile and Minify for Production
+## ✅ Type-Check, Compile & Minify for Production
 
-```sh
+```bash
 npm run build
-```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
+## 🧪 Run Unit Tests
 
-```sh
 npm run test:unit
-```
+
+
+src/
+├── api/               # Axios service calls
+├── assets/            # Static assets
+├── components/
+│   └── books/         # Book list & detail views
+├── models/            # TypeScript model (OOP)
+├── router/            # Vue Router setup
+├── styles/            # Tailwind base config (if needed)
+└── views/             # Route views
