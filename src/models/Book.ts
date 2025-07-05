@@ -1,16 +1,17 @@
-
 export class Book {
   constructor(
-    public id: string,
+    public id: number,
     public title: string,
     public author: string,
-    public description: string,
+    public description: string = '',
     public price: number,
-    public coverImage: string
+    public coverImage: string = '',
+    public isbn?: string,
+    public availableStock?: number
   ) {}
 
   get displayPrice(): string {
-    return `$${this.price.toFixed(2)}`;
+    return `$${this.price.toFixed(2)}`
   }
 
   static fromJSON(json: any): Book {
@@ -18,9 +19,11 @@ export class Book {
       json.id,
       json.title,
       json.author,
-      json.description,
+      json.description ?? '',
       json.price,
-      json.coverImage
-    );
+      json.coverImage ?? '',
+      json.isbn,
+      json.availableStock
+    )
   }
 }
